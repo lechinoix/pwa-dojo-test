@@ -13,6 +13,11 @@
         {{ cat.title }}
       </md-card-content>
     </md-card>
+    <router-link to="/add">
+      <md-button class="md-fab md-primary home__add-button">
+        <md-icon>add</md-icon>
+      </md-button>
+    </router-link>
   </div>
 </template>
 
@@ -31,5 +36,12 @@ export default {
 <style>
 .cat-card {
   margin: 20px;
+  z-index: 0;
+}
+.home__add-button {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  z-index: 1;
 }
 </style>
