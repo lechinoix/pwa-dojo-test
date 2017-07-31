@@ -5,8 +5,11 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from './App'
 import router from './router'
+import VueFire from 'vuefire';
 
 Vue.use(VueMaterial)
+Vue.use(VueFire)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -14,5 +17,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
 })

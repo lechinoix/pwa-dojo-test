@@ -2,29 +2,28 @@
   <div>
     <md-card
       class="cat-card"
-      v-for="picture in pictures"
-      v-bind:key="picture.id"
+      v-for="(cat, index) in cats"
+      v-bind:key="index"
     >
       <md-card-media>
-        <img :src="picture.url" alt="People">
+        <img :src="cat.url" alt="People">
       </md-card-media>
 
       <md-card-content>
-        {{ picture.title }}
+        {{ cat.title }}
       </md-card-content>
     </md-card>
   </div>
 </template>
 
 <script>
-import data from '../data';
+import { catsRef } from '../database';
+
 export default {
   name: 'hello',
-  data () {
-    return {
-      pictures: data.pictures
-    }
-  }
+  firebase: {
+    cats: catsRef,
+  },
 }
 </script>
 
