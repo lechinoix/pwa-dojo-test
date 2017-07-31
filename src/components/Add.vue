@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import { catsRef } from '../database';
+import { catsRef } from '../service';
+import router from '../router';
 
 export default {
   name: 'hello',
@@ -27,12 +28,13 @@ export default {
     url: "",
     title: "",
   },
-  firebase: {
-    cats: catsRef,
-  },
   methods: {
     pushCat: function() {
-      console.log('New URL: ', this.url, 'New title: ', this.title);
+      catsRef.push({
+        title: this.title,
+        url: this.url,
+      })
+      router.push('/');
     }
   }
 }

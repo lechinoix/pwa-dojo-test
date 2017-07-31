@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { catsRef } from '../database';
+import { catsRef } from '../service';
 
 export default {
   name: 'hello',
